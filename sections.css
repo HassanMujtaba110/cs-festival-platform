@@ -1,0 +1,1106 @@
+/* ==========================================================================
+   NEO-BRUTALIST SECTIONS & VIEWS STYLING
+   Exact 1:1 Aesthetic Match to edprep.site:
+   - Thick 4px/2px solid black borders
+   - Hard offset shadows (box-shadow: 4px 4px 0px #0a0a0a, 8px 8px 0px #1a4fd6)
+   - Off-white canvas #f5f5f0, pure white, and slate-900 contrasts
+   - High-energy yellow-400 (#facc15) and royal blue-700 (#1a4fd6) accents
+   - Bold uppercase italic typography and snappy micro-interactions
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Fixed Neo-Brutalist Navigation Bar
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-bottom: 4px solid #000000;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.brand-badge {
+  background: var(--color-blue-primary);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.65rem;
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0px 0px #000000;
+  letter-spacing: 0.05em;
+  font-style: italic;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1E3A8A; /* blue-900 */
+  letter-spacing: -0.04em;
+  font-style: italic;
+  line-height: 1;
+}
+
+.brand-subtitle {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #6B7280;
+  letter-spacing: 0.06em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #000000;
+  transition: color 150ms ease;
+}
+
+.nav-link:hover {
+  color: var(--color-blue-primary);
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    gap: 0.75rem;
+  }
+  .nav-link.hide-mobile {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Hero Section with Dot Grid & Mega Typography
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: 7rem;
+  padding-bottom: 5.5rem;
+  background-color: #F5F5F0;
+  border-bottom: 4px solid #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(#000000 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+  opacity: 0.04;
+}
+
+.hero-conic-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 280px;
+  opacity: 0.04;
+  pointer-events: none;
+  background: conic-gradient(from 0deg, #1A4FD6, transparent 60%);
+}
+
+.hero-tag-badge {
+  display: inline-block;
+  background-color: var(--color-yellow-accent);
+  border: 2px solid #000000;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 1rem;
+  box-shadow: 3px 3px 0px 0px #0A0A0A;
+  margin-bottom: 1.75rem;
+}
+
+.hero-title {
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: #000000;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title .text-blue-700 {
+  color: var(--color-blue-primary);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #4B5563;
+  max-width: 680px;
+  margin: 0 auto 2.25rem auto;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.hero-trust-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6B7280;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-green { background-color: #22C55E; }
+.dot-blue { background-color: var(--color-blue-primary); }
+.dot-yellow { background-color: var(--color-yellow-accent); }
+.dot-purple { background-color: var(--color-purple-accent); }
+
+/* Live Countdown Box */
+.countdown-box {
+  background-color: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  padding: 0.75rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.countdown-box-label {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-blue-primary);
+  letter-spacing: 0.05em;
+}
+
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 42px;
+}
+
+.countdown-unit .val {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #000000;
+  line-height: 1;
+}
+
+.countdown-unit .lbl {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.countdown-sep {
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Continuous Neo-Brutalist Marquee Ticker (Exact EdPrep Style)
+   -------------------------------------------------------------------------- */
+.marquee-ticker {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1rem 0;
+  border-bottom: 4px solid #000000;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-inner {
+  display: inline-flex;
+  animation: marquee-scroll 22s linear infinite;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 2rem;
+}
+
+.marquee-val {
+  font-size: 1.25rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.marquee-lbl {
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9CA3AF;
+}
+
+.marquee-star {
+  color: #4B5563;
+  margin: 0 0.5rem;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   4. Platform Tour / "The Interface" Section
+   -------------------------------------------------------------------------- */
+.tour-section {
+  padding: 5rem 1rem;
+  background-color: #F5F5F0;
+  border-bottom: 4px solid #000000;
+}
+
+.section-tag {
+  display: inline-block;
+  background-color: #1E3A8A;
+  color: #FFFFFF;
+  border: 2px solid #000000;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.85rem;
+  box-shadow: 2px 2px 0px 0px #0A0A0A;
+  margin-bottom: 0.75rem;
+}
+
+.section-tag-yellow {
+  background-color: var(--color-yellow-accent);
+  color: #000000;
+}
+
+.tour-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 960px) {
+  .tour-grid {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.tour-nav-tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+@media (min-width: 960px) {
+  .tour-nav-tabs {
+    width: 35%;
+  }
+}
+
+.tour-tab-btn {
+  text-align: left;
+  padding: 1.25rem;
+  border: 4px solid #000000;
+  background-color: #F3F4F6;
+  opacity: 0.65;
+  transition: all 120ms ease;
+  cursor: pointer;
+}
+
+.tour-tab-btn:hover {
+  opacity: 0.9;
+}
+
+.tour-tab-btn.active {
+  background-color: #FFFFFF;
+  opacity: 1;
+  box-shadow: 6px 6px 0px 0px #0A0A0A;
+  transform: translate(-3px, -3px);
+}
+
+.tour-tab-btn-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.tour-tab-title {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #000000;
+}
+
+.tour-tab-pill {
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid #000000;
+  background-color: var(--color-yellow-accent);
+  text-transform: uppercase;
+}
+
+.tour-tab-desc {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+/* Retro macOS / Terminal Window Display */
+.terminal-window {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 4px solid #000000;
+  box-shadow: 12px 12px 0px 0px #1A4FD6;
+  overflow: hidden;
+}
+
+@media (min-width: 960px) {
+  .terminal-window {
+    width: 65%;
+  }
+}
+
+.terminal-titlebar {
+  background-color: #000000;
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 4px solid #000000;
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.window-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+}
+.dot-red { background-color: #FF5F56; }
+.dot-yellow-mac { background-color: #FFBD2E; }
+.dot-green-mac { background-color: #27C93F; }
+
+.terminal-url-pill {
+  background-color: #1F2937;
+  color: #9CA3AF;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.terminal-body {
+  padding: 2rem;
+  background-color: #0A0F1D;
+  color: #FFFFFF;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.terminal-code-block {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.terminal-code-prompt {
+  color: #22C55E;
+}
+.terminal-code-keyword {
+  color: #60A5FA;
+}
+.terminal-code-string {
+  color: #FACC15;
+}
+
+/* --------------------------------------------------------------------------
+   5. Comparison Section ("Why CSF '26" / Table)
+   -------------------------------------------------------------------------- */
+.comparison-section {
+  padding: 5rem 1rem;
+  background-color: #FFFFFF;
+  border-bottom: 4px solid #000000;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .comparison-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.why-card-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.why-number-box {
+  width: 44px;
+  height: 44px;
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0px 0px #0A0A0A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.why-title {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 0.25rem;
+}
+
+.why-desc {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+.comparison-table-box {
+  background-color: #0F172A; /* slate-900 */
+  border: 4px solid #000000;
+  box-shadow: 8px 8px 0px 0px #0F2D7A;
+  padding: 1.75rem;
+  color: #FFFFFF;
+}
+
+.comparison-table-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #93C5FD;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.comp-table {
+  width: 100%;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.comp-table th {
+  padding-bottom: 0.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748B;
+}
+
+.comp-table td {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #1E293B;
+  color: #CBD5E1;
+  font-weight: 600;
+}
+
+.comp-cross {
+  color: #EF4444;
+  font-weight: 900;
+}
+.comp-check {
+  color: #4ADE80;
+  font-weight: 900;
+}
+
+/* --------------------------------------------------------------------------
+   6. Competitions Grid Section & Filter Toolbar
+   -------------------------------------------------------------------------- */
+.competitions-section {
+  padding: 5rem 1rem;
+  background-color: #F5F5F0;
+  border-bottom: 4px solid #000000;
+}
+
+.filter-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 2px 2px 0px 0px #000000;
+  cursor: pointer;
+  transition: all 100ms ease;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-yellow-accent);
+  transform: translate(-1px, -1px);
+}
+
+.filter-btn.active {
+  background-color: var(--color-blue-primary);
+  color: #FFFFFF;
+  box-shadow: 3px 3px 0px 0px #000000;
+  transform: translate(-2px, -2px);
+}
+
+.events-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  background-color: #FFFFFF;
+  border: 4px solid #000000;
+  box-shadow: 6px 6px 0px 0px #0A0A0A;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.event-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0px 0px #1A4FD6;
+}
+
+.event-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.event-card-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.event-card-desc {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #4B5563;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.event-prize-box {
+  margin-bottom: 1.25rem;
+  border-top: 2px dashed #E5E7EB;
+  padding-top: 0.75rem;
+}
+
+.event-prize-lbl {
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #6B7280;
+  letter-spacing: 0.05em;
+}
+
+.event-prize-val {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #0F172A;
+  font-style: italic;
+}
+
+.event-feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.event-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.event-feature-list .check-icon {
+  color: #16A34A;
+  font-weight: 900;
+}
+
+.event-card-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Interactive Team Eligibility & Track Recommender Tool
+   -------------------------------------------------------------------------- */
+.calculator-section {
+  padding: 5rem 1rem;
+  background-color: #0F172A; /* slate-900 */
+  border-bottom: 4px solid #000000;
+  color: #FFFFFF;
+}
+
+.calc-tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.calc-tab-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  font-weight: 900;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.calc-tab-btn.active {
+  background-color: var(--color-blue-primary);
+  border-color: #FFFFFF;
+  box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 0.3);
+}
+
+.calc-card-white {
+  background-color: #FFFFFF;
+  border: 4px solid #FFFFFF;
+  box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 0.15);
+  padding: 1.75rem;
+  color: #000000;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.calc-formula-banner {
+  background-color: #EFF6FF;
+  border: 2px solid var(--color-blue-primary);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Registration Desk Section
+   -------------------------------------------------------------------------- */
+.registration-section {
+  padding: 5rem 1rem;
+  background-color: #F5F5F0;
+  border-bottom: 4px solid #000000;
+}
+
+.wizard-neo-card {
+  background-color: #FFFFFF;
+  border: 4px solid #000000;
+  box-shadow: 8px 8px 0px 0px #0A0A0A;
+  padding: 2rem;
+}
+
+.type-toggle-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.type-toggle-card {
+  flex: 1;
+  background-color: #F9F9F6;
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 100ms ease;
+}
+
+.type-toggle-card:hover {
+  background-color: #FEF9C3; /* yellow tint */
+}
+
+.type-toggle-card.selected {
+  background-color: var(--color-yellow-accent);
+  border-color: #000000;
+  box-shadow: 5px 5px 0px 0px #000000;
+  transform: translate(-2px, -2px);
+}
+
+.type-toggle-title {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #000000;
+  margin-bottom: 2px;
+}
+
+.type-toggle-desc {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4B5563;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-section-title {
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000000;
+  margin: 1.5rem 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #000000;
+}
+
+/* --------------------------------------------------------------------------
+   9. Schedule & FAQ Section
+   -------------------------------------------------------------------------- */
+.schedule-section {
+  padding: 5rem 1rem;
+  background-color: #FFFFFF;
+  border-bottom: 4px solid #000000;
+}
+
+.schedule-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.schedule-card {
+  background-color: #F9F9F6;
+  border: 4px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  padding: 1.5rem;
+}
+
+.schedule-day-badge {
+  display: inline-block;
+  background-color: var(--color-blue-primary);
+  color: #FFFFFF;
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0px 0px #000000;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.schedule-timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.schedule-timeline li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.schedule-timeline .time {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  color: var(--color-blue-primary);
+  min-width: 75px;
+}
+
+.schedule-timeline .event {
+  font-weight: 700;
+  color: #000000;
+}
+
+.faq-section {
+  padding: 5rem 1rem;
+  background-color: #F5F5F0;
+  border-bottom: 4px solid #000000;
+}
+
+.faq-item {
+  background-color: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   10. Organizer Admin Dashboard
+   -------------------------------------------------------------------------- */
+.admin-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-card {
+  background-color: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  padding: 1rem;
+}
+
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #000000;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6B7280;
+}
+
+.admin-table-container {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.75rem;
+  background-color: #FFFFFF;
+}
+
+.data-table th {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #E5E7EB;
+  color: #000000;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.data-table tr:hover td {
+  background-color: #FEF9C3;
+}
+
+.event-breakdown-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.breakdown-row {
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0px 0px #000000;
+  padding: 0.35rem 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   11. Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.footer-brand {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #60A5FA;
+  font-style: italic;
+  margin-bottom: 0.25rem;
+}
+
+.footer-sub {
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #9CA3AF;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+}
+
+.footer-copy {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4B5563;
+}

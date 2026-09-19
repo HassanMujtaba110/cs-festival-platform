@@ -1,0 +1,699 @@
+/* ==========================================================================
+   NEO-BRUTALIST COMPONENTS DESIGN SYSTEM
+   Inspired by edprep.site: Hard shadows, solid borders, snappy tactile states
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Neo-Brutalist Buttons (.nb-btn, .btn)
+   -------------------------------------------------------------------------- */
+.nb-btn,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border: 3px solid var(--border-black);
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+  box-shadow: var(--nb-shadow-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 100ms ease, box-shadow 100ms ease, background-color 150ms ease, color 150ms ease;
+  user-select: none;
+  line-height: 1.2;
+}
+
+.nb-btn:hover,
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--nb-shadow-lg);
+}
+
+.nb-btn:active,
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #000;
+}
+
+/* Button Variants */
+.btn-primary,
+.nb-btn-primary {
+  background-color: var(--color-blue-primary);
+  color: #FFFFFF;
+}
+.btn-primary:hover,
+.nb-btn-primary:hover {
+  background-color: var(--color-yellow-accent);
+  color: #000000;
+}
+
+.btn-secondary,
+.nb-btn-secondary {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+.btn-secondary:hover,
+.nb-btn-secondary:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.btn-yellow,
+.nb-btn-yellow {
+  background-color: var(--color-yellow-accent);
+  color: #000000;
+}
+.btn-yellow:hover,
+.nb-btn-yellow:hover {
+  background-color: var(--color-blue-primary);
+  color: #FFFFFF;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border: 2px solid transparent;
+  box-shadow: none;
+  font-weight: 800;
+}
+.btn-ghost:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+  border-color: #000000;
+  box-shadow: var(--nb-shadow-xs);
+}
+
+.btn-danger {
+  background-color: #FEE2E2;
+  color: #DC2626;
+  border-color: #000000;
+}
+.btn-danger:hover {
+  background-color: #DC2626;
+  color: #FFFFFF;
+}
+
+.btn-success {
+  background-color: #22C55E;
+  color: #FFFFFF;
+}
+.btn-success:hover {
+  background-color: #16A34A;
+}
+
+/* Button Sizes */
+.btn-lg {
+  padding: 0.95rem 2rem;
+  font-size: 1rem;
+  box-shadow: var(--nb-shadow-lg);
+}
+
+.btn-sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
+  border-width: 2px;
+  box-shadow: var(--nb-shadow-xs);
+}
+
+.btn-xs {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.72rem;
+  border-width: 2px;
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+/* --------------------------------------------------------------------------
+   2. Neo-Brutalist Badges & Tags
+   -------------------------------------------------------------------------- */
+.nb-tag,
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2px solid var(--border-black);
+  box-shadow: var(--nb-shadow-xs);
+  background-color: #FFFFFF;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.badge-yellow,
+.badge-open {
+  background-color: var(--color-yellow-accent);
+  color: #000000;
+}
+
+.badge-blue,
+.badge-primary {
+  background-color: var(--color-blue-primary);
+  color: #FFFFFF;
+}
+
+.badge-green,
+.badge-closing-soon {
+  background-color: #22C55E;
+  color: #FFFFFF;
+}
+
+.badge-dark,
+.badge-neutral {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   3. Inputs & Form Controls
+   -------------------------------------------------------------------------- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #000000;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-label .required-indicator {
+  color: var(--status-error);
+  font-weight: 900;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 2px solid var(--border-black);
+  padding: 0.75rem 0.95rem;
+  color: #000000;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 2px 2px 0px 0px #000000;
+  transition: all 100ms ease;
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-blue-primary);
+  box-shadow: 4px 4px 0px 0px var(--color-blue-primary);
+  background-color: #FFFFFF;
+}
+
+.form-input.mono,
+.form-select.mono {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.form-input.is-invalid,
+.form-select.is-invalid {
+  border-color: var(--status-error);
+  box-shadow: 4px 4px 0px 0px var(--status-error);
+  background-color: #FEF2F2;
+}
+
+.form-input.is-valid {
+  border-color: var(--status-success);
+}
+
+.form-feedback {
+  min-height: 18px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+  color: var(--status-error);
+}
+
+/* --------------------------------------------------------------------------
+   4. Modal Dialogs (Neo-Brutalist Frame)
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 150ms ease, visibility 150ms ease;
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background-color: #FFFFFF;
+  border: 4px solid var(--border-black);
+  box-shadow: var(--nb-shadow-xl);
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal-header {
+  padding: 1rem 1.25rem;
+  background-color: #F5F5F0;
+  border-bottom: 3px solid var(--border-black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  background-color: #FFFFFF;
+}
+
+.modal-footer {
+  padding: 1rem 1.25rem;
+  background-color: #F5F5F0;
+  border-top: 3px solid var(--border-black);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.btn-icon {
+  background-color: #FFFFFF;
+  border: 2px solid var(--border-black);
+  box-shadow: 2px 2px 0px 0px #000;
+  color: #000000;
+  font-size: 1.25rem;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 100ms ease;
+}
+
+.btn-icon:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+  transform: translate(-1px, -1px);
+}
+
+/* --------------------------------------------------------------------------
+   5. Dynamic Team Member Cards
+   -------------------------------------------------------------------------- */
+.team-member-card {
+  background-color: #F9F9F6;
+  border: 3px solid var(--border-black);
+  box-shadow: var(--nb-shadow-sm);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.member-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px dashed #000000;
+  padding-bottom: 0.5rem;
+}
+
+.member-order-tag {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--color-blue-primary);
+  letter-spacing: 0.05em;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Neo-Brutalist Festival Pass / Ticket Stub
+   -------------------------------------------------------------------------- */
+.festival-pass {
+  background: #FFFFFF;
+  border: 4px solid #000000;
+  box-shadow: var(--nb-shadow-lg);
+  margin: 0.5rem auto;
+  max-width: 680px;
+  color: #000000;
+}
+
+.pass-header {
+  background-color: var(--color-yellow-accent);
+  border-bottom: 4px solid #000000;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pass-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pass-badge {
+  background: #000000;
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.65rem;
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0px 0px #FFFFFF;
+}
+
+.pass-meta-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.pass-org {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #000000;
+  letter-spacing: 0.05em;
+}
+
+.pass-edition {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.pass-status-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 0.3rem 0.75rem;
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.pass-status-pill.status-confirmed {
+  background: #22C55E;
+  color: #FFFFFF;
+}
+.pass-status-pill.status-checked_in {
+  background: var(--color-blue-primary);
+  color: #FFFFFF;
+}
+.pass-status-pill.status-cancelled {
+  background: #EF4444;
+  color: #FFFFFF;
+}
+
+.pass-body {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 640px) {
+  .pass-body {
+    flex-direction: column;
+  }
+}
+
+.pass-main-info {
+  flex: 1;
+  padding: 1.25rem;
+}
+
+.ticket-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+}
+
+.ticket-field-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.ticket-field-value {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #000000;
+}
+
+.ticket-field-value.event-name-highlight {
+  font-size: 1.25rem;
+  color: var(--color-blue-primary);
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.ticket-grid-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.ticket-members-block {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 2px dashed #000000;
+}
+
+.ticket-members-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.member-pill {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid #000000;
+  background: #F3F4F6;
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.member-pill.lead-pill {
+  background: var(--color-yellow-accent);
+}
+
+/* Tear-Off Perforation Stub */
+.pass-stub {
+  width: 220px;
+  background-color: #F5F5F0;
+  border-left: 3px dashed #000000;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .pass-stub {
+    width: 100%;
+    border-left: none;
+    border-top: 3px dashed #000000;
+  }
+}
+
+.pass-stub::before,
+.pass-stub::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-app);
+  border: 3px solid #000000;
+  border-radius: 50%;
+  left: -12px;
+  z-index: 2;
+}
+
+.pass-stub::before { top: -11px; }
+.pass-stub::after { bottom: -11px; }
+
+.ticket-qr-svg {
+  display: block;
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+}
+
+.stub-qr-hint {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #4B5563;
+  margin-top: 0.35rem;
+}
+
+.stub-id-block {
+  margin: 0.5rem 0;
+}
+
+.stub-id-label {
+  font-size: 0.62rem;
+  font-weight: 900;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stub-id-code {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: var(--color-blue-primary);
+  letter-spacing: 0.05em;
+}
+
+.stub-barcode-wrap {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.pass-footer {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Toast Notifications
+   -------------------------------------------------------------------------- */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.2rem;
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #000000;
+  min-width: 280px;
+  max-width: 420px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #000000;
+  flex-shrink: 0;
+}
+
+.toast-info .toast-indicator { background-color: var(--color-blue-primary); }
+.toast-success .toast-indicator { background-color: var(--status-success); }
+.toast-warning .toast-indicator { background-color: var(--color-yellow-accent); }
+.toast-error .toast-indicator { background-color: var(--status-error); }
+
+.toast-message { flex-grow: 1; }
+
+.toast-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   8. Print Stylesheet
+   -------------------------------------------------------------------------- */
+@media print {
+  body * { visibility: hidden; }
+  #ticketPassModal, #ticketPassModal * { visibility: visible; }
+  #ticketPassModal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: transparent !important;
+  }
+  .modal-card {
+    border: 3px solid #000 !important;
+    box-shadow: none !important;
+  }
+  .modal-header, .modal-footer { display: none !important; }
+}

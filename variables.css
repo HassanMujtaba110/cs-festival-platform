@@ -1,0 +1,68 @@
+/* ==========================================================================
+   CSS VARIABLES & DESIGN TOKENS - NEO-BRUTALIST EDITION
+   Inspired by edprep.site: High contrast, thick borders, bold shadows,
+   vibrant yellow & royal blue accents, and unapologetic typography.
+   ========================================================================== */
+
+:root {
+  /* Canvas & Surface Colors */
+  --bg-app: #F5F5F0;
+  --bg-white: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-surface-alt: #F0F0EB;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-surface-hover: #F8F8F5;
+  --bg-dark: #0A0A0A;
+  --bg-dark-slate: #0F172A;
+  --bg-dark-card: #1E293B;
+
+  /* Vibrant Accents (matching edprep style) */
+  --color-blue-primary: #1A4FD6;
+  --color-blue-dark: #0F2D7A;
+  --color-blue-deep: #1E3A8A;
+  --color-yellow-accent: #FACC15;
+  --color-yellow-hover: #EAB308;
+  --color-green-accent: #22C55E;
+  --color-red-accent: #EF4444;
+  --color-purple-accent: #A855F7;
+
+  /* Hard Borders */
+  --border-black: #000000;
+  --border-width-sm: 2px;
+  --border-width-md: 3px;
+  --border-width-lg: 4px;
+  --border-subtle: #E2E8F0;
+
+  /* Neo-Brutalist Hard Offset Shadows (zero blur) */
+  --nb-shadow-xs: 2px 2px 0px 0px #000000;
+  --nb-shadow-sm: 3px 3px 0px 0px #000000;
+  --nb-shadow-md: 4px 4px 0px 0px #000000;
+  --nb-shadow-lg: 6px 6px 0px 0px #000000;
+  --nb-shadow-xl: 8px 8px 0px 0px #000000;
+  --nb-shadow-blue: 8px 8px 0px 0px #1A4FD6;
+  --nb-shadow-yellow: 6px 6px 0px 0px #FACC15;
+  --nb-shadow-white: 4px 4px 0px 0px rgba(255, 255, 255, 0.3);
+
+  /* Typography Colors */
+  --text-primary: #000000;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --text-inverse: #FFFFFF;
+  --text-accent: #1A4FD6;
+  --text-yellow: #FACC15;
+
+  /* Functional Status */
+  --status-success: #16A34A;
+  --status-warning: #D97706;
+  --status-error: #DC2626;
+  --status-info: #2563EB;
+
+  /* Typography Stack */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* Dimensions */
+  --header-height: 72px;
+  --container-max-width: 1200px;
+  --container-narrow-width: 860px;
+}

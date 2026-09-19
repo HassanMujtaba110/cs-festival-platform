@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CSFestivalDatabaseSchema",
+  "description": "Google Sheets database schema representation for CS Festival Platform",
+  "version": "1.0.0",
+  "sheets": [
+    {
+      "name": "Registrations",
+      "description": "Main table storing all registration tickets (individual participants and team entries)",
+      "columns": [
+        { "index": "A", "name": "RegistrationID", "type": "string", "example": "CSF-2026-7K4P9", "primaryKey": true },
+        { "index": "B", "name": "Timestamp", "type": "iso8601", "example": "2026-10-15T09:30:00.000Z" },
+        { "index": "C", "name": "EventID", "type": "string", "example": "code-sprint" },
+        { "index": "D", "name": "EventName", "type": "string", "example": "Algorithmic CodeSprint" },
+        { "index": "E", "name": "RegistrationType", "type": "enum", "enum": ["INDIVIDUAL", "TEAM"] },
+        { "index": "F", "name": "TeamName", "type": "string", "example": "Binary Bandits" },
+        { "index": "G", "name": "LeaderName", "type": "string", "example": "Alex Turner" },
+        { "index": "H", "name": "Class", "type": "string", "example": "11" },
+        { "index": "I", "name": "Section", "type": "string", "example": "A" },
+        { "index": "J", "name": "RollNumber", "type": "string", "example": "2026-CS-042" },
+        { "index": "K", "name": "Email", "type": "string", "example": "alex.turner@school.edu" },
+        { "index": "L", "name": "Phone", "type": "string", "example": "+1 555-019-2834" },
+        { "index": "M", "name": "Status", "type": "enum", "enum": ["CONFIRMED", "CHECKED_IN", "WAITLISTED", "CANCELLED"] }
+      ]
+    },
+    {
+      "name": "TeamMembers",
+      "description": "Detailed roster mapping each member to their respective team registration",
+      "columns": [
+        { "index": "A", "name": "RegistrationID", "type": "string", "foreignKey": "Registrations.RegistrationID" },
+        { "index": "B", "name": "MemberName", "type": "string", "example": "Sarah Connor" },
+        { "index": "C", "name": "Class", "type": "string", "example": "11" },
+        { "index": "D", "name": "Section", "type": "string", "example": "B" },
+        { "index": "E", "name": "RollNumber", "type": "string", "example": "2026-CS-088" },
+        { "index": "F", "name": "Role", "type": "enum", "enum": ["LEADER", "MEMBER"] }
+      ]
+    },
+    {
+      "name": "Events",
+      "description": "Registry of competitions and schedule metadata",
+      "columns": [
+        { "index": "A", "name": "EventID", "type": "string", "primaryKey": true },
+        { "index": "B", "name": "EventName", "type": "string" },
+        { "index": "C", "name": "Category", "type": "string" },
+        { "index": "D", "name": "RegistrationType", "type": "enum", "enum": ["INDIVIDUAL", "TEAM", "BOTH"] },
+        { "index": "E", "name": "MinTeamSize", "type": "integer" },
+        { "index": "F", "name": "MaxTeamSize", "type": "integer" },
+        { "index": "G", "name": "Status", "type": "enum", "enum": ["OPEN", "CLOSING_SOON", "CLOSED"] },
+        { "index": "H", "name": "Venue", "type": "string" },
+        { "index": "I", "name": "ScheduleTime", "type": "string" }
+      ]
+    },
+    {
+      "name": "Settings",
+      "description": "Key-value configuration switches for the festival organizers",
+      "columns": [
+        { "index": "A", "name": "Key", "type": "string" },
+        { "index": "B", "name": "Value", "type": "string" }
+      ],
+      "defaultRows": [
+        { "Key": "RegistrationOpen", "Value": "TRUE" },
+        { "Key": "AllowMultipleEvents", "Value": "FALSE" },
+        { "Key": "AdminPasskey", "Value": "csf2026admin" }
+      ]
+    }
+  ]
+}
